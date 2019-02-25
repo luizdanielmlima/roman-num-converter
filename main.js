@@ -1,7 +1,6 @@
 window.onload = function() {
+  var romanNum = 0;
   var numInput = document.getElementById("numInput");
-  var myButton = document.getElementById("button");
-  // myButton.addEventListener("click", ShowResult);
   numInput.addEventListener("keypress", checkKey);
 
   function checkKey() {
@@ -14,12 +13,32 @@ window.onload = function() {
   // lets show the result!
   function ShowResult() {
     var userInput = numInput.value;
-    if (userInput <= 3999) {
-      var romanNum = convertToRoman(userInput);
-      $("#showIt").html(romanNum);
+    let resultEl = document.getElementById("showIt");
+    if (userInput == "") {
+      resultEl.innerHTML = "huh?";
     } else {
-      $("#showIt").html("number is too high!");
+      if (userInput != "" && userInput <= 3999) {
+        romanNum = convertToRoman(userInput);
+        animateCSS("#showIt", "flipOutX");
+      } else {
+        resultEl.innerHTML = "too high!";
+      }
     }
+  }
+
+  function animateCSS(element, animationName) {
+    const node = document.querySelector(element);
+    node.classList.add("animated", animationName);
+
+    function handleAnimationEnd() {
+      node.classList.remove("animated", animationName);
+      node.removeEventListener("animationend", handleAnimationEnd);
+      // console.log("anim ended");
+      animateCSS("#showIt", "flipInX");
+      node.innerHTML = romanNum;
+    }
+
+    node.addEventListener("animationend", handleAnimationEnd);
   }
 
   //this part does all the math
