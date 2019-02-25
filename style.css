@@ -63,10 +63,9 @@ section {
   content: "";
   display: block;
   position: absolute;
-  top: 20px;
+  top: 16px;
   width: 100%;
-  border-top: 2px solid var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  border-top: 3px solid var(--primary-color);
 }
 
 .title::before {
@@ -75,11 +74,10 @@ section {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  border-top: 2px solid var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
 }
 
-h2 {
+.subtitle {
   color: var(--primary-color);
   font-size: calc(3.7 * var(--font-size));
 }
@@ -121,12 +119,12 @@ input > label {
 }
 
 .output-container > h2 {
-  font-size: 4rem;
+  font-size: calc(3.5 * var(--font-size));
   color: #605e5b;
 }
 
 footer {
-  width: 100%;
+  width: 470px;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -144,7 +142,15 @@ footer {
     margin: 20px 0;
   }
 
-  h2 {
-    font-size: 50px;
+  .title {
+    font-size: calc(3.5 * var(--font-size));
+  }
+
+  .subtitle {
+    font-size: calc(2 * var(--font-size));
+  }
+
+  footer {
+    font-size: calc(var(--font-size) / 1.4);
   }
 }
