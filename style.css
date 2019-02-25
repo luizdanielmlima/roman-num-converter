@@ -127,20 +127,11 @@ label {
   font-size: 18px;
   width: 160px;
   padding: 5px;
-  /* horizotal-align: middle; */
 }
+
 label > span {
   display: inline-block;
   vertical-align: left;
-  /* horizotal-align: middle; */
   min-width: 150px;
   margin-bottom: 20px;
-}
-button {
-  padding: 10px;
-  font-size: 18px;
-}
-.img-text-div {
-  margin: auto;
-  width: 500px;
 }

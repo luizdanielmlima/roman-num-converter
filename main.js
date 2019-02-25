@@ -17,23 +17,8 @@ window.onload = function() {
     if (userInput <= 3999) {
       var romanNum = convertToRoman(userInput);
       $("#showIt").html(romanNum);
-      changeColorBackground();
     } else {
       $("#showIt").html("number is too high!");
-    }
-  }
-
-  var backColor = "light";
-
-  function changeColorBackground() {
-    //animates the input-container background color
-    var myDiv = $(".input-container");
-    if (backColor == "light") {
-      // backColor = "dark";
-      // myDiv.css("background-color", "#70C0B3");
-    } else if (backColor == "dark") {
-      // backColor = "light";
-      // myDiv.css("background-color", "#008F77");
     }
   }
 
