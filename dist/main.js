@@ -14,13 +14,15 @@ window.onload = function() {
   function ShowResult() {
     var userInput = numInput.value;
     let resultEl = document.getElementById("showIt");
-    if (userInput <= 3999) {
-      romanNum = convertToRoman(userInput);
-      animateCSS("#showIt", "flipOutX");
-      // resultEl.classList.add("animated", "fadeInUp");
-      // resultEl.innerHTML = romanNum;
+    if (userInput == "") {
+      resultEl.innerHTML = "huh?";
     } else {
-      resultEl.innerHTML = "number is too high!";
+      if (userInput != "" && userInput <= 3999) {
+        romanNum = convertToRoman(userInput);
+        animateCSS("#showIt", "flipOutX");
+      } else {
+        resultEl.innerHTML = "too high!";
+      }
     }
   }
 
