@@ -1,0 +1,15 @@
+{
+  "name": "RomanNumberConverter",
+  "version": "1.0.0",
+  "description": "Very simple app that converts numbers to roman numerals. One of my first \"projects\" in JS/HTML/CSS, derived from an algorithm excercise from freecodecamp.org.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
