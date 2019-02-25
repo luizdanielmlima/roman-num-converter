@@ -1,9 +1,7 @@
 window.onload = function() {
-  //when the user clicks in the input field
   var numInput = document.getElementById("numInput");
   var myButton = document.getElementById("button");
-  myButton.addEventListener("click", ShowResult);
-  numInput.addEventListener("click", selectAll);
+  // myButton.addEventListener("click", ShowResult);
   numInput.addEventListener("keypress", checkKey);
 
   function checkKey() {
@@ -13,19 +11,11 @@ window.onload = function() {
     }
   }
 
-  function selectAll() {
-    changeColorBackground();
-    this.focus();
-    this.setSelectionRange(0, this.value.length);
-  }
   // lets show the result!
   function ShowResult() {
     var userInput = numInput.value;
     if (userInput <= 3999) {
       var romanNum = convertToRoman(userInput);
-      //var showResult = document.getElementById("showIt");
-      //showResult.innerHTML = romanNum;
-      //===commented the two lines above, testing DOM with JQuery===
       $("#showIt").html(romanNum);
       changeColorBackground();
     } else {
@@ -36,14 +26,14 @@ window.onload = function() {
   var backColor = "light";
 
   function changeColorBackground() {
-    //animates the input-div background color
-    var myDiv = $(".input-div");
+    //animates the input-container background color
+    var myDiv = $(".input-container");
     if (backColor == "light") {
-      backColor = "dark";
-      myDiv.css("background-color", "#70C0B3");
+      // backColor = "dark";
+      // myDiv.css("background-color", "#70C0B3");
     } else if (backColor == "dark") {
-      backColor = "light";
-      myDiv.css("background-color", "#008F77");
+      // backColor = "light";
+      // myDiv.css("background-color", "#008F77");
     }
   }
 
