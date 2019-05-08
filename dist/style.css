@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
 }
 
 :root {
@@ -9,8 +12,8 @@
   --primary-color: rgb(170, 155, 151);
   --secondary-color: rgb(216, 216, 216);
   --terciary-color: rgb(168, 138, 128);
-  --primary-font: "Marcellus SC", serif;
-  --secondary-font: "Overpass Mono", monospace;
+  --primary-font: 'Marcellus SC', serif;
+  --secondary-font: 'Overpass Mono', monospace;
 }
 
 body {
@@ -19,33 +22,30 @@ body {
   text-align: center;
   text-align: center;
   width: 100vw;
+  overflow-x: hidden;
 }
-
-section {
-  margin: 0 50px;
-}
-
 .app-container {
-  /* background-color: palegoldenrod; */
+  height: 100vh;
   display: grid;
-  grid-template-columns: 80px auto 80px;
+  grid-template-columns: auto auto auto;
   justify-items: center;
-  width: 1024px;
-  height: 100%;
-  margin: 50px auto;
+  /* background-color: palegoldenrod; */
 }
 
 .side-area {
   background: url(assets/column_pattern_01.png) repeat center center;
-  width: 50px;
-  height: 700px;
+  width: 40px;
+  height: 90vh;
   opacity: 0.1;
 }
 
 .center-area {
-  /* background-color: paleturquoise; */
   position: relative;
-  min-height: 700px;
+  /* background-color: paleturquoise; */
+}
+
+section {
+  margin: 0 50px;
 }
 
 .roman-soldier {
@@ -60,7 +60,7 @@ section {
 }
 
 .title::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 16px;
@@ -69,7 +69,7 @@ section {
 }
 
 .title::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   bottom: 0px;
@@ -124,15 +124,20 @@ input > label {
 }
 
 footer {
-  width: 470px;
   position: absolute;
+  width: 250px;
   bottom: 0;
   left: 50%;
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
+  /* border: solid 1px red; */
 }
 
 @media screen and (max-width: 1024px) {
+  :root {
+    --font-size: 16px;
+  }
+
   .app-container {
     display: grid;
     grid-template-columns: 0.5fr auto 0.5fr;
@@ -148,6 +153,10 @@ footer {
 
   .subtitle {
     font-size: calc(2 * var(--font-size));
+  }
+
+  #showIt {
+    font-size: calc(1.6 * var(--font-size));
   }
 
   footer {
